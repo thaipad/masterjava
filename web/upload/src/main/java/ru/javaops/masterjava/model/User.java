@@ -8,6 +8,10 @@ public class User {
     private final String email;
     private final UserFlag flag;
 
+    public User(String fullName, String email, UserFlag flag) {
+        this(null, fullName, email, flag);
+    }
+
     public User(Integer id, String fullName, String email, UserFlag flag) {
         this.id = id;
         this.fullName = fullName;
@@ -15,8 +19,8 @@ public class User {
         this.flag = flag;
     }
 
-    public User(String fullName, String email, UserFlag flag) {
-        this(null, fullName, email, flag);
+    public Integer getId() {
+        return id;
     }
 
     public String getFullName() {
@@ -29,10 +33,6 @@ public class User {
 
     public UserFlag getFlag() {
         return flag;
-    }
-
-    public Integer getId() {
-        return id;
     }
 
     @Override
@@ -53,11 +53,11 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "User (" +
                 "id=" + id +
                 ", fullName='" + fullName + '\'' +
                 ", email='" + email + '\'' +
                 ", flag=" + flag +
-                '}';
+                ')';
     }
 }
