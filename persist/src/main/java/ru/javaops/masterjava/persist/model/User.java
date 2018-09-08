@@ -12,9 +12,11 @@ public class User extends BaseEntity {
     private @NonNull String fullName;
     private @NonNull String email;
     private @NonNull UserFlag flag;
+    @Column("id_city")
+    private @NonNull Integer idCity;
 
-    public User(Integer id, String fullName, String email, UserFlag flag) {
-        this(fullName, email, flag);
-        this.id=id;
+    public User(Integer id, String fullName, String email, UserFlag flag, Integer city) {
+        this(fullName, email, flag, city);
+        this.id = id;
     }
 }
